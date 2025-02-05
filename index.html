@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Valentine's Card</title>
+  <!-- Google Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <!-- Frame 1: Initial screen -->
+    <div id="frame1" class="frame active">
+      <h1 class="title">I Love you Thriya</h1>
+      <!-- PNG image used as a button -->
+      <img src="button.png" class="btn" alt="Click to Open!" onclick="switchFrame('frame2')">
+    </div>
+
+    <!-- Frame 2: Multi select -->
+    <div id="frame2" class="frame">
+      <h2>I know it's late...</h2>
+      <p class="message">But I wanted to do something a little special for our first valentines.</p>
+      <img src="sunflowerthriya.png" alt="Cute heart" class="heart-img" onclick="switchFrame('frame3')">
+      <!-- PNG image used as a back button -->
+      <img src="letterthriya.png" class="heart-img" alt="Click to Open!" onclick="switchFrame('frame4')">
+      <img src="heartthriya.png" alt="Cute heart" class="heart-img" onclick="switchFrame('frame5')">
+    </div>
+
+    <!-- Frame 3: flower -->
+    <div id="frame3" class="frame">
+      <h2>I hope you like these</h2>
+      <p class="message">I love you</p>
+      <!-- PNG image used as a back button -->
+      <img src="back_button.png" class="heart-img" alt="Back" onclick="switchFrame('frame2')">
+    </div>
+  </div>
+
+   <!-- Frame 4: letter -->
+    <div id="frame4" class="frame">
+      <h2>You deserve all the letters</h2>
+      <p class="message">Thank you for everything </p>
+      <!-- PNG image used as a back button -->
+      <img src="back_button.png" class="heart-img" alt="Back" onclick="switchFrame('frame2')">
+    </div>
+  </div>
+
+<!-- Frame 5: valentine -->
+    <div id="frame5" class="frame">
+      <h2>Will you be my Valentine?</h2>
+      <p class="message"></p>
+      <!-- PNG image used as a back button -->
+      <img src="back_button.png" class="heart-img" alt="Cute heart" onclick="switchFrame('frame2')">
+      <img src="yes_button.png" class="heart-img" alt="Cute heart" onclick="switchFrame('frame6')">
+      <img src="no_button.png" class="heart-img" alt="Cute heart" onclick="switchFrame('frame7')">
+    </div>
+  </div>
+
+<!-- Frame 6: valentine yes -->
+<div id="frame6" class="frame">
+    <h2>Im so happy 😊 </h2>
+    <p class="message">Thanks for being my best freind</p>
+    <!-- PNG image used as a back button -->
+    <img src="back_button.png" class="heart-img" alt="Back" onclick="switchFrame('frame5')">
+  </div>
+</div>
+
+<!-- Frame 7: valentine no -->
+<div id="frame7" class="frame">
+    <h2>Try again 😠</h2>
+    <p class="message"></p>
+    <!-- PNG image used as a back button -->
+    <img src="back_button.png" class="heart-img" alt="Back" onclick="switchFrame('frame5')">
+  </div>
+</div>
+
+  <!-- JavaScript for frame transitions -->
+  <script>
+    function switchFrame(targetFrameId) {
+      document.querySelectorAll('.frame').forEach(frame => {
+        frame.classList.remove('active');
+      });
+      document.getElementById(targetFrameId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
